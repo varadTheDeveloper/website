@@ -1,0 +1,318 @@
+---
+import Base from '../layouts/Base.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import Visual from '../components/Visual.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../config/site';
+import {
+  heroPoints, clients, mainServices, services, stats, industries, portfolio, process, tools, testimonials, faqs,
+} from '../data/content';
+
+const years = new Date().getFullYear() - site.foundedYear;
+---
+<Base
+  title={`${site.name} | Website Design & Digital Marketing Agency in ${site.city}`}
+  description="Website design, SEO, Google & Meta Ads, social media and branding for growing businesses. Free consultation and a fixed quote."
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow eyebrow--light">Web Design · Digital Marketing · Branding</p>
+        <h1 class="hero__title">
+          Websites & marketing that turn visitors into <span class="hl">customers</span>
+        </h1>
+        <p class="hero__lead">
+          {site.name} is a full-service agency in {site.city}. We design fast websites and run marketing
+          campaigns that bring real enquiries, with clear reports and no long contracts.
+        </p>
+        <ul class="hero__points">
+          {heroPoints.map((p) => <li><Icon name="check" size={18} />{p}</li>)}
+        </ul>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="#quote">Talk to Our Experts <Icon name="arrow" size={18} /></a>
+          <a class="btn btn--ghost-light" href="#work">See Our Work</a>
+        </div>
+        <dl class="hero__mini-stats">
+          <div><dt>{years}+</dt><dd>years</dd></div>
+          <div><dt>{stats[1].value}+</dt><dd>websites</dd></div>
+          <div><dt>{stats[2].value}+</dt><dd>clients</dd></div>
+        </dl>
+      </div>
+      <div class="hero__form" id="quote">
+        <QuoteForm />
+      </div>
+    </div>
+  </section>
+
+  <!-- Client logos -->
+  <section class="logos" aria-labelledby="logos-title">
+    <div class="container">
+      <h2 class="logos__title" id="logos-title">Trusted by growing businesses across Maharashtra</h2>
+    </div>
+    <div class="marquee">
+      <ul class="marquee__track">
+        {[...clients, ...clients].map((c, i) => (
+          <li aria-hidden={i >= clients.length ? 'true' : undefined}>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Value -->
+  <section class="section value">
+    <div class="container value__grid">
+      <div>
+        <p class="eyebrow">Why {site.shortName}</p>
+        <h2 class="section-title">One team for your website, marketing and brand</h2>
+        <p class="section-lead">
+          Most businesses juggle a web developer, an ads freelancer and a designer. We bring it all under one roof,
+          so your website, campaigns and brand work together, and you have one number to call.
+        </p>
+        <a class="btn btn--primary" href="#quote">Grow Your Business <Icon name="arrow" size={18} /></a>
+      </div>
+      <ul class="value__cards">
+        <li><Icon name="target" /><h3>Leads, not likes</h3><p>Every page and campaign is built around enquiries and sales.</p></li>
+        <li><Icon name="chart" /><h3>Full transparency</h3><p>You own your accounts and see every rupee in a monthly report.</p></li>
+        <li><Icon name="rocket" /><h3>Fast & modern</h3><p>Mobile-first sites that load quickly and rank better.</p></li>
+        <li><Icon name="users" /><h3>Local team</h3><p>Talk to real people in Marathi, Hindi or English.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Main services -->
+  <section class="section section--soft" id="services">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">What we do</p>
+        <h2 class="section-title">Services that grow your business online</h2>
+      </div>
+      <div class="feature-list">
+        {mainServices.map((s) => (
+          <article class="feature" id={`service-${s.id}`}>
+            <div class="feature__visual"><Visual kind={s.visual} /></div>
+            <div class="feature__copy">
+              <p class="eyebrow">{s.eyebrow}</p>
+              <h3 class="feature__title">{s.title}</h3>
+              <p>{s.text}</p>
+              <ul class="checklist">
+                {s.points.map((p) => <li><Icon name="check" size={18} />{p}</li>)}
+              </ul>
+              <a class="btn btn--dark" href="#quote" data-service={s.service}>{s.cta} <Icon name="arrow" size={18} /></a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="section-head section-head--spaced">
+        <h2 class="section-title section-title--sm">Everything you need, in one place</h2>
+      </div>
+      <ul class="service-grid">
+        {services.map((s) => (
+          <li class="service-card">
+            <span class="service-card__icon"><Icon name={s.icon} /></span>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))}
+      </ul>
+      <div class="center"><a class="btn btn--primary" href="#quote">Enquire Now</a></div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats" aria-label="Our numbers">
+    <div class="container stats__grid">
+      {stats.map((s) => (
+        <div class="stat">
+          <p class="stat__value"><span data-count={s.value}>{s.value}</span>{s.suffix}</p>
+          <p class="stat__label">{s.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-head section-head--row">
+        <div>
+          <p class="eyebrow">Our work</p>
+          <h2 class="section-title">Recent projects</h2>
+        </div>
+        <a class="link-arrow" href="#quote">Start your project <Icon name="arrow" size={18} /></a>
+      </div>
+      <ul class="work-grid">
+        {portfolio.map((p) => (
+          <li>
+            <button class="work-card" type="button" data-open={`work-${p.id}`} style={`--c:${p.color};--a:${p.accent}`}>
+              <span class="work-card__shot" aria-hidden="true">
+                <span class="mini"><i></i><b></b><b class="s"></b><em></em></span>
+              </span>
+              <span class="work-card__meta">
+                <span class="work-card__cat">{p.category}</span>
+                <span class="work-card__name">{p.name}</span>
+              </span>
+              <span class="work-card__plus" aria-hidden="true"><Icon name="plus" size={20} /></span>
+            </button>
+            <dialog class="modal" id={`work-${p.id}`} aria-labelledby={`work-${p.id}-title`}>
+              <div class="modal__shot" style={`--c:${p.color};--a:${p.accent}`} aria-hidden="true">
+                <span class="mini mini--lg"><i></i><b></b><b class="s"></b><em></em></span>
+              </div>
+              <div class="modal__body">
+                <p class="eyebrow">{p.category}</p>
+                <h3 id={`work-${p.id}-title`}>{p.name}</h3>
+                <p>{p.summary}</p>
+                <ul class="tags">{p.tags.map((t) => <li>{t}</li>)}</ul>
+                {site.demoMode && p.demo && <p class="modal__demo">Sample project (demo content).</p>}
+                <a class="btn btn--primary" href="#quote" data-close>Want something similar?</a>
+              </div>
+              <button class="modal__close" type="button" data-close aria-label="Close"><Icon name="close" /></button>
+            </dialog>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="section section--dark" id="industries">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow eyebrow--light">Industries</p>
+        <h2 class="section-title">Experience across industries</h2>
+        <p class="section-lead">Every industry has its own customers and rules. Pick yours to see what we usually build.</p>
+      </div>
+      <ul class="industry-grid">
+        {industries.map((ind, i) => (
+          <li>
+            <button class="industry" type="button" data-open={`ind-${i}`}>
+              <Icon name={ind.icon} />
+              <span class="industry__name">{ind.name}</span>
+              <span class="industry__text">{ind.text}</span>
+            </button>
+            <dialog class="modal modal--sm" id={`ind-${i}`} aria-labelledby={`ind-${i}-title`}>
+              <div class="modal__body">
+                <p class="eyebrow">Industry</p>
+                <h3 id={`ind-${i}-title`}>{ind.name}</h3>
+                <p>{ind.text} Typical work we do:</p>
+                <ul class="checklist">{ind.work.map((w) => <li><Icon name="check" size={18} />{w}</li>)}</ul>
+                <a class="btn btn--primary" href="#quote" data-close>Discuss my project</a>
+              </div>
+              <button class="modal__close" type="button" data-close aria-label="Close"><Icon name="close" /></button>
+            </dialog>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">How we work</p>
+        <h2 class="section-title">Simple process, no surprises</h2>
+      </div>
+      <ol class="process">
+        {process.map((step, i) => (
+          <li class="process__step">
+            <span class="process__num">{String(i + 1).padStart(2, '0')}</span>
+            <span class="process__icon"><Icon name={step.icon} /></span>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section class="cta-band">
+    <div class="container cta-band__inner">
+      <div>
+        <h2>Your business deserves more than a pretty website.</h2>
+        <p>Let's build something that brings you customers every month.</p>
+      </div>
+      <div class="cta-band__actions">
+        <a class="btn btn--light" href="#quote">Get a Free Quote</a>
+        <a class="btn btn--ghost-light" href={site.phoneHref}><Icon name="phone" size={18} /> {site.phone}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Tools & technology</p>
+        <h2 class="section-title">Built with tools the best teams use</h2>
+      </div>
+      <div class="tools">
+        {tools.map((t) => (
+          <div class="tools__group">
+            <h3>{t.group}</h3>
+            <ul>{t.items.map((item) => <li>{item}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Client stories</p>
+        <h2 class="section-title">What our clients say</h2>
+      </div>
+      <ul class="testimonials">
+        {testimonials.map((t) => (
+          <li class="testimonial">
+            <svg class="testimonial__q" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24c4-1 6-4 6-9H7V7h9v8c0 7-4 11-10 12Zm14 0c4-1 6-4 6-9h-5V7h9v8c0 7-4 11-10 12Z" fill="currentColor" /></svg>
+            <blockquote>{t.quote}</blockquote>
+            <p class="testimonial__who">
+              <span class="avatar" aria-hidden="true">{t.name.replace('Dr. ', '').split(' ').map((w) => w[0]).join('')}</span>
+              <span><strong>{t.name}</strong><small>{t.role}</small></span>
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--soft" id="faq">
+    <div class="container faq">
+      <div class="faq__intro">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="section-title">Questions we often hear</h2>
+        <p class="section-lead">Can't find your answer? Call us or send a message on WhatsApp.</p>
+        <div class="faq__ctas">
+          <a class="btn btn--primary" href="#quote">Ask Us Anything</a>
+          <a class="btn btn--outline" href={site.whatsappHref} target="_blank" rel="noopener"><Icon name="whatsapp" size={18} /> WhatsApp</a>
+        </div>
+      </div>
+      <div class="faq__list">
+        {faqs.map((f, i) => (
+          <details class="faq__item" open={i === 0}>
+            <summary>{f.q}<Icon name="plus" size={20} class="faq__icon" /></summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="closing">
+    <div class="container closing__inner">
+      <h2>Ready to grow your business online?</h2>
+      <p>Tell us what you need. We'll reply with honest advice and a fixed quote.</p>
+      <div class="closing__actions">
+        <a class="btn btn--primary" href="#quote" data-service="Website Design & Development">Website Design</a>
+        <a class="btn btn--dark" href="#quote" data-service="Google / Meta Ads">Digital Marketing</a>
+      </div>
+    </div>
+  </section>
+</Base>

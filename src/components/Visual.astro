@@ -1,0 +1,42 @@
+---
+// Illustrations drawn with HTML/CSS (no photos, no licences needed).
+interface Props { kind: 'browser' | 'chart' | 'social' }
+const { kind } = Astro.props;
+---
+{kind === 'browser' && (
+  <div class="vis vis--browser" aria-hidden="true">
+    <div class="vis__bar"><i></i><i></i><i></i><span></span></div>
+    <div class="vis__page">
+      <div class="vis__nav"><b></b><span></span><span></span><span></span></div>
+      <div class="vis__hero"><div><b class="w80"></b><b class="w60"></b><em></em></div><div class="vis__img"></div></div>
+      <div class="vis__cards"><span></span><span></span><span></span></div>
+    </div>
+    <div class="vis__phone"><div class="vis__img"></div><b class="w80"></b><b class="w60"></b><em></em></div>
+  </div>
+)}
+{kind === 'chart' && (
+  <div class="vis vis--chart" aria-hidden="true">
+    <div class="vis__card">
+      <div class="vis__card-head"><span>Leads this month</span><strong>+42%</strong></div>
+      <div class="vis__bars">
+        {[30, 42, 38, 55, 48, 64, 70, 66, 82, 90].map((h) => <span style={`--h:${h}%`}></span>)}
+      </div>
+    </div>
+    <div class="vis__kpis">
+      <div><small>Clicks</small><strong>12.4k</strong></div>
+      <div><small>Cost / lead</small><strong>₹186</strong></div>
+      <div><small>Rank</small><strong>#3</strong></div>
+    </div>
+  </div>
+)}
+{kind === 'social' && (
+  <div class="vis vis--social" aria-hidden="true">
+    <div class="vis__grid">
+      {Array.from({ length: 9 }).map((_, i) => <span class={`t${i % 4}`}></span>)}
+    </div>
+    <div class="vis__brand">
+      <div class="vis__swatches"><i style="--c:#0B1B3F"></i><i style="--c:#FF6B2C"></i><i style="--c:#FFD3BF"></i><i style="--c:#EEF1F7"></i></div>
+      <b>Aa</b>
+    </div>
+  </div>
+)}

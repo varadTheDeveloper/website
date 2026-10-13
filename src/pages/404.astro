@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../config/site';
+---
+<Base title={`Page not found | ${site.name}`} description="This page does not exist." noindex>
+  <section class="thanks">
+    <div class="container">
+      <h1 class="section-title">Page not found</h1>
+      <p class="section-lead">The page you are looking for has moved or does not exist.</p>
+      <div class="thanks__actions"><a class="btn btn--primary" href="/">Go to home</a></div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,55 @@
+---
+import { site } from '../config/site';
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import { services } from '../data/content';
+const year = new Date().getFullYear();
+const socials = [
+  { name: 'instagram', href: site.social.instagram, label: 'Instagram' },
+  { name: 'linkedin', href: site.social.linkedin, label: 'LinkedIn' },
+  { name: 'facebook', href: site.social.facebook, label: 'Facebook' },
+  { name: 'youtube', href: site.social.youtube, label: 'YouTube' },
+] as const;
+---
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <Logo light />
+      <p>{site.tagline}. Based in {site.city}, working with businesses across India.</p>
+      <ul class="socials">
+        {socials.map((s) => (
+          <li><a href={s.href} aria-label={s.label} rel="noopener"><Icon name={s.name} size={20} /></a></li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <h2 class="site-footer__title">Services</h2>
+      <ul class="site-footer__links">
+        {services.slice(0, 6).map((s) => <li><a href="/#services">{s.title}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <h2 class="site-footer__title">Company</h2>
+      <ul class="site-footer__links">
+        <li><a href="/#work">Our Work</a></li>
+        <li><a href="/#process">How We Work</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="/#quote">Contact</a></li>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="site-footer__title">Get in touch</h2>
+      <ul class="site-footer__contact">
+        <li><Icon name="phone" size={18} /><a href={site.phoneHref}>{site.phone}</a></li>
+        <li><Icon name="mail" size={18} /><a href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li><Icon name="pin" size={18} /><span>{site.address}</span></li>
+        <li><Icon name="clock" size={18} /><span>{site.hours}</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container site-footer__bottom">
+    <p>© {year} {site.name}. All rights reserved.</p>
+    <p><a href="/privacy/">Privacy</a></p>
+  </div>
+</footer>

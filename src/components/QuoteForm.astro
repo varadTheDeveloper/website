@@ -1,0 +1,55 @@
+---
+import { site } from '../config/site';
+const key = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
+const budgets = ['Under ₹25k', '₹25k – 50k', '₹50k – 1 Lakh', '1 Lakh +'];
+const serviceOptions = ['Website Design & Development', 'E-commerce Store', 'SEO', 'Google / Meta Ads', 'Social Media Management', 'Branding & Logo', 'Not sure yet'];
+---
+<form class="quote-form" id="quote-form" data-key={key} data-email={site.email} novalidate>
+  <div class="quote-form__head">
+    <h2 class="quote-form__title">Let's discuss your project</h2>
+    <p class="quote-form__sub">Free consultation. We call back within one working day.</p>
+  </div>
+
+  <div class="field">
+    <label for="qf-name">Your name</label>
+    <input id="qf-name" name="name" type="text" autocomplete="name" required maxlength="80" />
+  </div>
+  <div class="field-row">
+    <div class="field">
+      <label for="qf-phone">Phone</label>
+      <input id="qf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="^[+0-9 ()-]{10,16}$" placeholder="+91" />
+    </div>
+    <div class="field">
+      <label for="qf-email">Email</label>
+      <input id="qf-email" name="email" type="email" autocomplete="email" required maxlength="120" />
+    </div>
+  </div>
+  <div class="field">
+    <label for="qf-service">What do you need?</label>
+    <select id="qf-service" name="service" required>
+      <option value="">Choose a service</option>
+      {serviceOptions.map((s) => <option>{s}</option>)}
+    </select>
+  </div>
+  <fieldset class="field budget">
+    <legend>Budget</legend>
+    <div class="budget__options">
+      {budgets.map((b, i) => (
+        <label class="chip">
+          <input type="radio" name="budget" value={b} checked={i === 1} />
+          <span>{b}</span>
+        </label>
+      ))}
+    </div>
+  </fieldset>
+  <div class="field">
+    <label for="qf-message">Tell us a little <span class="optional">(optional)</span></label>
+    <textarea id="qf-message" name="message" rows="3" maxlength="1500"></textarea>
+  </div>
+  <!-- Honeypot: humans never see or fill this. -->
+  <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+  <button class="btn btn--primary btn--block" type="submit">Get Your Free Quote</button>
+  <p class="quote-form__status" role="status" aria-live="polite"></p>
+  <p class="quote-form__note">No spam. Read our <a href="/privacy/">privacy policy</a>.</p>
+</form>
