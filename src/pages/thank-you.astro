@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../config/site';
+---
+<Base title={`Thank you | ${site.name}`} description="We received your enquiry." noindex>
+  <section class="thanks">
+    <div class="container">
+      <span class="thanks__icon"><Icon name="check" size={40} /></span>
+      <h1 class="section-title">Thank you! We got your message.</h1>
+      <p class="section-lead">Our team will call you within one working day. Need to talk sooner?</p>
+      <div class="thanks__actions">
+        <a class="btn btn--primary" href={site.phoneHref}><Icon name="phone" size={18} /> Call {site.phone}</a>
+        <a class="btn btn--outline" href={site.whatsappHref} target="_blank" rel="noopener"><Icon name="whatsapp" size={18} /> WhatsApp</a>
+      </div>
+      <p style="margin-top:32px"><a class="link-arrow" href="/">Back to home <Icon name="arrow" size={18} /></a></p>
+    </div>
+  </section>
+</Base>

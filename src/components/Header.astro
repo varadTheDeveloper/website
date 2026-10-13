@@ -1,0 +1,34 @@
+---
+import { site } from '../config/site';
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+
+const nav = [
+  { href: '/#services', label: 'Services' },
+  { href: '/#work', label: 'Our Work' },
+  { href: '/#industries', label: 'Industries' },
+  { href: '/#process', label: 'Process' },
+  { href: '/#faq', label: 'FAQ' },
+];
+---
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <Logo />
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      </ul>
+      <a class="btn btn--primary site-nav__cta-mobile" href="/#quote">Get a Free Quote</a>
+    </nav>
+    <div class="site-header__actions">
+      <a class="site-header__phone" href={site.phoneHref}>
+        <Icon name="phone" size={18} />
+        <span>{site.phone}</span>
+      </a>
+      <a class="btn btn--primary btn--sm site-header__cta" href="/#quote">Get a Free Quote</a>
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu" data-nav-toggle>
+        <Icon name="menu" />
+      </button>
+    </div>
+  </div>
+</header>
