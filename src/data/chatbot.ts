@@ -47,10 +47,10 @@ export const chatTopics: ChatTopic[] = [
   },
   {
     id: 'seo',
-    label: 'SEO & Google Ads',
-    keywords: ['seo', 'google', 'rank', 'ranking', 'search', 'ads', 'advertising', 'ppc', 'meta', 'facebook ads', 'leads', 'marketing'],
+    label: 'SEO, AEO & Ads',
+    keywords: ['seo', 'aeo', 'ai', 'chatgpt', 'google', 'rank', 'ranking', 'search', 'ads', 'advertising', 'ppc', 'meta', 'facebook ads', 'leads', 'marketing'],
     answer: [
-      'We do local SEO, Google Business Profile, Google Search ads and Instagram/Facebook ads, all planned around qualified leads, with a plain-language report every month.',
+      'We do local SEO, AEO (getting your business recommended in AI answers like ChatGPT and Google AI Overviews), Google Business Profile, Google Search ads and Instagram/Facebook ads, all planned around qualified leads, with a plain-language report every month.',
       faq('When will I see results from SEO'),
     ],
     menu: true,
@@ -60,6 +60,13 @@ export const chatTopics: ChatTopic[] = [
     label: 'Social media',
     keywords: ['social', 'instagram', 'insta', 'facebook', 'posts', 'post', 'reel', 'reels', 'content', 'calendar'],
     answer: ['We plan a monthly content calendar and create posts, reels and stories that match your brand, and reply to comments if you want.', faq('Do I need to sign a long contract')],
+    menu: true,
+  },
+  {
+    id: 'ngo',
+    label: 'NGO setup',
+    keywords: ['ngo', 'trust', 'foundation', 'charity', 'non profit', 'nonprofit', 'section 8', 'society'],
+    answer: ['We provide a legal team for your NGO setup and the best possible website, so you can focus on your work while we take care of the rest.', 'Want to talk about your NGO? I can take your details and our team will call you back.'],
     menu: true,
   },
   {
@@ -121,6 +128,6 @@ export const chatText = {
   placeholder: 'Type your question…',
   placeholderName: 'Your name',
   placeholderPhone: 'Mobile number',
-  serviceOptions: ['Website', 'E-commerce store', 'SEO / Google Ads', 'Social media', 'Branding & logo', 'Not sure yet'],
+  serviceOptions: ['Website / App', 'E-commerce store', 'SEO, AEO / Google Ads', 'Social media', 'Branding & logo', 'NGO setup & website', 'Not sure yet'],
   links: { whatsapp, call },
 };

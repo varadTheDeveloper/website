@@ -271,6 +271,11 @@ button { font: inherit; cursor: pointer; }
 .service-card:hover .service-card__icon { background: var(--orange); color: var(--white); }
 .service-card h3 { font-size: 18px; margin-bottom: 6px; }
 .service-card p { margin: 0; font-size: 15px; color: var(--muted); }
+.service-card--wide { grid-column: 1 / -1; display: grid; grid-template-columns: auto 1fr; column-gap: 20px; align-items: center; background: var(--navy); border-color: var(--navy); }
+.service-card--wide .service-card__icon { grid-row: span 2; margin: 0; background: rgb(255 107 44 / .15); color: var(--orange); }
+.service-card--wide h3 { color: var(--white); }
+.service-card--wide p { color: #c9d2e8; max-width: 70ch; }
+.service-card--wide:hover .service-card__icon { background: var(--orange); color: var(--white); }
 @media (max-width: 900px) { .service-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .service-grid { grid-template-columns: 1fr; } }
 
@@ -317,8 +322,8 @@ button { font: inherit; cursor: pointer; }
 body.has-modal { overflow: hidden; }
 
 /* ---------- Industries ---------- */
-.industry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.industry { width: 100%; height: 100%; text-align: left; padding: 26px; border-radius: var(--radius); border: 1px solid rgb(255 255 255 / .1); background: rgb(255 255 255 / .04); color: #c9d2e8; transition: background-color .2s, border-color .2s, transform .2s; }
+.industry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.industry { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; width: 100%; height: 100%; text-align: left; padding: 26px; border-radius: var(--radius); border: 1px solid rgb(255 255 255 / .1); background: rgb(255 255 255 / .04); color: #c9d2e8; transition: background-color .2s, border-color .2s, transform .2s; }
 .industry:hover { background: rgb(255 107 44 / .12); border-color: rgb(255 107 44 / .5); transform: translateY(-4px); }
 .industry svg { color: var(--orange); width: 32px; height: 32px; margin-bottom: 16px; }
 .industry__name { display: block; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
