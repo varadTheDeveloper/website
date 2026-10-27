@@ -1,6 +1,7 @@
 // Simple (non-AI) chatbot: fixed topics with ready answers, plus a short enquiry flow.
 // Answers come from the FAQ in content.ts where possible, so they stay in one place.
 import { site } from '../config/site';
+import { url } from '../lib/url';
 import { faqs, services } from './content';
 
 const faq = (startsWith: string) => {
@@ -66,7 +67,7 @@ export const chatTopics: ChatTopic[] = [
     label: 'See your work',
     keywords: ['work', 'portfolio', 'projects', 'examples', 'samples', 'clients', 'case'],
     answer: ['You can see some of our recent projects on this page.'],
-    links: [{ label: 'Show projects', href: '/#work' }],
+    links: [{ label: 'Show projects', href: url('/#work') }],
     menu: true,
   },
   {

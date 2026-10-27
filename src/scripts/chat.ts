@@ -95,7 +95,8 @@ export function initChat() {
           a.target = '_blank';
           a.rel = 'noopener';
         }
-        if (c.link.href.startsWith('/#')) a.addEventListener('click', () => setOpen(false));
+        // Links to a section of this page: close the chat so the section is visible.
+        if (!c.link.external && c.link.href.includes('#')) a.addEventListener('click', () => setOpen(false));
         el = a;
       } else {
         const b = document.createElement('button');

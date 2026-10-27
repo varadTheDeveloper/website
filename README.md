@@ -41,3 +41,16 @@ work, talk to a person) or type a question; typed text is matched against keywor
 "Get a free quote" asks name, phone and service, then sends it by email the same way as the form
 (subject says "Chatbot"). Nothing else from the chat is stored or sent. An AI version is planned for later
 (needs a small server so the AI key stays secret).
+
+## Hosting on GitHub Pages
+
+`.github/workflows/pages.yml` builds and publishes the site on every push to `main`.
+
+One-time set-up (repo owner):
+1. The repo must be **public** (free GitHub accounts only get Pages for public repos).
+2. Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+3. Optional: **Settings → Secrets and variables → Actions → New repository secret**, name `PUBLIC_WEB3FORMS_KEY`.
+   Then re-run the workflow (Actions tab → Deploy to GitHub Pages → Run workflow).
+
+The site is then at `https://varadthedeveloper.github.io/website/`. Links use `src/lib/url.ts`, so the same
+code works in that sub-folder and later on a custom domain (Settings → Pages → Custom domain).
