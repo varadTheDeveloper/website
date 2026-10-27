@@ -1,9 +1,10 @@
 ---
+import { url } from '../lib/url';
 import { site } from '../config/site';
 interface Props { light?: boolean }
 const { light = false } = Astro.props;
 ---
-<a href="/" class:list={['logo', { 'logo--light': light }]} aria-label={`${site.name} home`}>
+<a href={url('/')} class:list={['logo', { 'logo--light': light }]} aria-label={`${site.name} home`}>
   <svg class="logo__mark" width="36" height="36" viewBox="0 0 36 36" aria-hidden="true">
     <rect width="36" height="36" rx="10" fill="#FF6B2C" />
     <path d="M11 11h14l-14 14h14" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />

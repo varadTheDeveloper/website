@@ -1,5 +1,6 @@
 // Quote form: validation, then email via sendEnquiry().
 import { sendEnquiry, type Enquiry } from './enquiry';
+import { url } from '../lib/url';
 
 export function initQuoteForm() {
   const form = document.querySelector<HTMLFormElement>('#quote-form');
@@ -58,7 +59,7 @@ export function initQuoteForm() {
     try {
       const result = await sendEnquiry(enquiry, key, email);
       if (result === 'sent') {
-        window.location.href = '/thank-you/';
+        window.location.href = url('/thank-you/');
         return;
       }
       setStatus('Your email app should open now. Please press send there.', 'ok');
