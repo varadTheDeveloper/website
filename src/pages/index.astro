@@ -5,7 +5,7 @@ import Visual from '../components/Visual.astro';
 import Icon from '../components/Icon.astro';
 import { site } from '../config/site';
 import {
-  heroPoints, clients, mainServices, services, stats, industries, portfolio, process, tools, testimonials, faqs,
+  heroPoints, mainServices, services, stats, industries, portfolio, process, tools, faqs,
 } from '../data/content';
 
 const years = new Date().getFullYear() - site.foundedYear;
@@ -31,7 +31,7 @@ const years = new Date().getFullYear() - site.foundedYear;
         </ul>
         <div class="hero__ctas">
           <a class="btn btn--primary" href="#quote">Talk to Our Experts <Icon name="arrow" size={18} /></a>
-          <a class="btn btn--ghost-light" href="#work">See Our Work</a>
+          <a class="btn btn--ghost-light" href="#work">See Our Demos</a>
         </div>
         <dl class="hero__mini-stats">
           <div><dt>{years}+</dt><dd>years</dd></div>
@@ -42,20 +42,6 @@ const years = new Date().getFullYear() - site.foundedYear;
       <div class="hero__form" id="quote">
         <QuoteForm />
       </div>
-    </div>
-  </section>
-
-  <!-- Client logos -->
-  <section class="logos" aria-labelledby="logos-title">
-    <div class="container">
-      <h2 class="logos__title" id="logos-title">Trusted by growing businesses across Maharashtra</h2>
-    </div>
-    <div class="marquee">
-      <ul class="marquee__track">
-        {[...clients, ...clients].map((c, i) => (
-          <li aria-hidden={i >= clients.length ? 'true' : undefined}>{c}</li>
-        ))}
-      </ul>
     </div>
   </section>
 
@@ -132,13 +118,13 @@ const years = new Date().getFullYear() - site.foundedYear;
     </div>
   </section>
 
-  <!-- Portfolio -->
+  <!-- Our Demos -->
   <section class="section" id="work">
     <div class="container">
       <div class="section-head section-head--row">
         <div>
-          <p class="eyebrow">Our work</p>
-          <h2 class="section-title">Recent projects</h2>
+          <p class="eyebrow">Our demos</p>
+          <h2 class="section-title">Demo websites we've built</h2>
         </div>
         <a class="link-arrow" href="#quote">Start your project <Icon name="arrow" size={18} /></a>
       </div>
@@ -164,7 +150,6 @@ const years = new Date().getFullYear() - site.foundedYear;
                 <h3 id={`work-${p.id}-title`}>{p.name}</h3>
                 <p>{p.summary}</p>
                 <ul class="tags">{p.tags.map((t) => <li>{t}</li>)}</ul>
-                {site.demoMode && p.demo && <p class="modal__demo">Sample project (demo content).</p>}
                 <a class="btn btn--primary" href="#quote" data-close>Want something similar?</a>
               </div>
               <button class="modal__close" type="button" data-close aria-label="Close"><Icon name="close" /></button>
@@ -242,7 +227,7 @@ const years = new Date().getFullYear() - site.foundedYear;
   </section>
 
   <!-- Tools -->
-  <section class="section section--soft">
+  <section class="section">
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Tools & technology</p>
@@ -256,28 +241,6 @@ const years = new Date().getFullYear() - site.foundedYear;
           </div>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="section" id="testimonials">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Client stories</p>
-        <h2 class="section-title">What our clients say</h2>
-      </div>
-      <ul class="testimonials">
-        {testimonials.map((t) => (
-          <li class="testimonial">
-            <svg class="testimonial__q" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24c4-1 6-4 6-9H7V7h9v8c0 7-4 11-10 12Zm14 0c4-1 6-4 6-9h-5V7h9v8c0 7-4 11-10 12Z" fill="currentColor" /></svg>
-            <blockquote>{t.quote}</blockquote>
-            <p class="testimonial__who">
-              <span class="avatar" aria-hidden="true">{t.name.replace('Dr. ', '').split(' ').map((w) => w[0]).join('')}</span>
-              <span><strong>{t.name}</strong><small>{t.role}</small></span>
-            </p>
-          </li>
-        ))}
-      </ul>
     </div>
   </section>
 

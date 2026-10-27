@@ -10,12 +10,6 @@ export const heroPoints = [
   'Clear monthly reports',
 ];
 
-// DEMO: fictional client names shown as text logos.
-export const clients = [
-  'Sahyadri Foods', 'NovaCare Clinic', 'Urban Nest Realty', 'Vidya Academy', 'Shree Agro',
-  'Kraft & Co.', 'Pulse Fitness', 'Godavari Motors', 'Bloom Boutique', 'TechNova Labs',
-];
-
 export const mainServices = [
   {
     id: 'web',
@@ -80,7 +74,7 @@ export const industries: { icon: IconName; name: string; text: string; work: str
   { icon: 'rocket', name: 'Startups', text: 'New brands launching their first product.', work: ['Brand identity from scratch', 'MVP websites and web apps', 'Launch campaigns'] },
 ];
 
-// Portfolio. Lexauraa is a real project; the others are DEMO.
+// "Our Demos" section. Lexauraa is a real project; the others are demo builds.
 export const portfolio = [
   {
     id: 'lexauraa',
@@ -90,7 +84,6 @@ export const portfolio = [
     accent: '#EFE7DF',
     summary: 'A three-language (Marathi, Hindi, English) website for a law firm in Jalna with a privacy-first chatbot, online video consultation booking with Google Meet, a blog and a private admin panel with CRM.',
     tags: ['Astro', 'Express', 'PostgreSQL', 'AWS'],
-    demo: false,
   },
   {
     id: 'novacare',
@@ -100,7 +93,6 @@ export const portfolio = [
     accent: '#DDF3F4',
     summary: 'Clinic website with doctor profiles, appointment requests and a Google Business Profile clean-up for local searches.',
     tags: ['Website', 'SEO', 'Google Business'],
-    demo: true,
   },
   {
     id: 'urbannest',
@@ -110,7 +102,6 @@ export const portfolio = [
     accent: '#E3E9FA',
     summary: 'Project landing pages with floor plans and brochure downloads, connected to Google and Meta lead campaigns.',
     tags: ['Landing page', 'Google Ads', 'Meta Ads'],
-    demo: true,
   },
   {
     id: 'bloom',
@@ -120,7 +111,6 @@ export const portfolio = [
     accent: '#FBE4EB',
     summary: 'Online store with UPI payments, a product catalogue on Instagram and a monthly reels calendar.',
     tags: ['E-commerce', 'Instagram', 'Reels'],
-    demo: true,
   },
   {
     id: 'vidya',
@@ -130,7 +120,6 @@ export const portfolio = [
     accent: '#FDEEDD',
     summary: 'Coaching institute website with course pages and an admission season campaign on Google and Instagram.',
     tags: ['Website', 'Lead ads', 'SEO'],
-    demo: true,
   },
   {
     id: 'shreeagro',
@@ -140,7 +129,6 @@ export const portfolio = [
     accent: '#E3F1E1',
     summary: 'New logo and brand guidelines, plus a product catalogue website for dealers and export enquiries.',
     tags: ['Branding', 'Catalogue', 'B2B'],
-    demo: true,
   },
 ];
 
@@ -158,13 +146,6 @@ export const tools = [
   { group: 'Cloud & Tracking', items: ['AWS', 'Cloudflare', 'Vercel', 'Hotjar', 'Looker Studio'] },
 ];
 
-// DEMO testimonials: fictional people. Never publish these as real.
-export const testimonials = [
-  { quote: 'They rebuilt our clinic website in three weeks. Patients now book from their phones and the calls to our front desk have come down a lot.', name: 'Dr. Priya Kulkarni', role: 'Founder, NovaCare Clinic' },
-  { quote: 'Clear communication, honest advice and reports we can actually understand. Our Google Ads finally make sense.', name: 'Rahul Deshmukh', role: 'Director, Urban Nest Realty' },
-  { quote: 'Our Instagram looks professional now and the online store runs without any trouble during festival sales.', name: 'Sneha Patil', role: 'Owner, Bloom Boutique' },
-  { quote: 'From the logo to the website, everything feels like one brand. Dealers take us more seriously.', name: 'Amit Jadhav', role: 'Partner, Shree Agro' },
-];
 
 export const faqs = [
   { q: 'How much does a website cost?', a: 'It depends on the number of pages and features. After a short call we send a fixed quote, so you know the full cost before we start. Hosting and yearly renewal are listed separately.' },
@@ -173,6 +154,6 @@ export const faqs = [
   { q: 'When will I see results from SEO?', a: 'SEO usually shows clear movement in 3 to 6 months. Google and Meta ads can bring enquiries from the first week. We recommend a mix of both.' },
   { q: 'Do I need to sign a long contract for marketing?', a: 'No. Marketing plans are monthly. We suggest at least 3 months so there is enough data to improve campaigns, but you can stop with 30 days notice.' },
   { q: 'Who owns the website and the ad accounts?', a: 'You do. The domain, website code, Google and Meta ad accounts are set up in your name, and we work on them with your permission.' },
-  { q: 'Do you work with businesses outside Jalna?', a: 'Yes. We work with clients across Maharashtra and India over calls, video meetings and WhatsApp.' },
+  { q: 'Do you work with businesses outside Pune?', a: 'Yes. We work with clients across Maharashtra and India over calls, video meetings and WhatsApp.' },
   { q: 'What happens after I submit the form?', a: 'We call you back within one working day to understand your needs. There is no charge and no obligation for this first conversation.' },
 ];

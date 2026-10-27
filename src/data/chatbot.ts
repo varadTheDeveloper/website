@@ -64,10 +64,10 @@ export const chatTopics: ChatTopic[] = [
   },
   {
     id: 'work',
-    label: 'See your work',
-    keywords: ['work', 'portfolio', 'projects', 'examples', 'samples', 'clients', 'case'],
-    answer: ['You can see some of our recent projects on this page.'],
-    links: [{ label: 'Show projects', href: url('/#work') }],
+    label: 'See your demos',
+    keywords: ['work', 'demo', 'demos', 'portfolio', 'projects', 'examples', 'samples', 'case'],
+    answer: ['You can see our demo websites on this page.'],
+    links: [{ label: 'Show demos', href: url('/#work') }],
     menu: true,
   },
   {
@@ -85,7 +85,7 @@ export const chatTopics: ChatTopic[] = [
   {
     id: 'where',
     label: 'Where are you?',
-    keywords: ['where', 'location', 'address', 'office', 'city', 'jalna', 'outside', 'remote', 'online'],
+    keywords: ['where', 'location', 'address', 'office', 'city', 'pune', 'outside', 'remote', 'online'],
     answer: [`We are in ${site.address}. ${faq('Do you work with businesses outside')}`],
   },
   {

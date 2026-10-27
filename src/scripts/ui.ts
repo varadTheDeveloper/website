@@ -60,7 +60,7 @@ const animateCount = (el: HTMLElement) => {
 
 // Reveal on scroll
 const revealTargets = document.querySelectorAll<HTMLElement>(
-  '.section-head, .feature, .service-card, .value__cards li, .work-grid > li, .industry-grid > li, .process__step, .tools__group, .testimonial, .faq__item',
+  '.section-head, .feature, .service-card, .value__cards li, .work-grid > li, .industry-grid > li, .process__step, .tools__group, .faq__item',
 );
 
 if ('IntersectionObserver' in window && !reduceMotion) {
