@@ -24,8 +24,8 @@ npm run check               # type check
 
 ## Demo mode
 
-`demoMode: true` in `src/config/site.ts` shows a "Demo site" bar and blocks search engines
-(`noindex` + `robots.txt`). The numbers (years, websites, clients) in `content.ts` are **made up**.
+`demoMode: true` in `src/config/site.ts` blocks search engines (`noindex` + `robots.txt`);
+with `showDemoBar: true` it also shows a "Demo site" bar (currently off). The numbers (years, websites, clients) in `content.ts` are **made up**.
 Replace them with real ones, then set `demoMode: false`.
 
 ## Enquiry form (email)
