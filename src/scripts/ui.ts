@@ -1,4 +1,5 @@
 import { initQuoteForm } from './form';
+import { initChat } from './chat';
 
 document.documentElement.classList.add('js');
 
@@ -95,3 +96,4 @@ document.querySelectorAll<HTMLElement>('[data-service]').forEach((el) => {
 });
 
 initQuoteForm();
+initChat();

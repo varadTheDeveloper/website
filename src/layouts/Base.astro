@@ -5,6 +5,7 @@ import { site } from '../config/site';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileBar from '../components/MobileBar.astro';
+import Chatbot from '../components/Chatbot.astro';
 
 interface Props {
   title: string;
@@ -55,6 +56,7 @@ const jsonLd = {
     </main>
     <Footer />
     <MobileBar />
+    <Chatbot />
     <script>
       import '../scripts/ui';
     </script>

@@ -18,6 +18,7 @@ npm run check               # type check
 |---|---|
 | Name, phone, WhatsApp, email, city, social links, `demoMode` | `src/config/site.ts` |
 | Services, numbers, clients, portfolio, testimonials, FAQ | `src/data/content.ts` |
+| Chatbot topics, keywords and replies | `src/data/chatbot.ts` (answers reuse the FAQ) |
 | Colours and fonts | top of `src/styles/global.css` |
 | Logo | `src/components/Logo.astro` and `public/favicon.svg` |
 
@@ -32,3 +33,11 @@ Replace them with real ones, then set `demoMode: false`. Do not publish fake tes
 1. Go to https://web3forms.com, enter the email that should receive enquiries, and copy the access key from the email you get.
 2. Put it in `.env`: `PUBLIC_WEB3FORMS_KEY=your-key` (never commit `.env`).
 3. Rebuild. Without a key, the form opens the visitor's email app instead.
+
+## Chatbot (simple, no AI)
+
+Opens only when the visitor clicks "Chat with us". Visitors tap topics (cost, timeline, services, SEO, social,
+work, talk to a person) or type a question; typed text is matched against keywords in `src/data/chatbot.ts`.
+"Get a free quote" asks name, phone and service, then sends it by email the same way as the form
+(subject says "Chatbot"). Nothing else from the chat is stored or sent. An AI version is planned for later
+(needs a small server so the AI key stays secret).
