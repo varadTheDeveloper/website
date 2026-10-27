@@ -12,7 +12,7 @@ const years = new Date().getFullYear() - site.foundedYear;
 ---
 <Base
   title={`${site.name} | Website Design & Digital Marketing Agency in ${site.city}`}
-  description="Website design, SEO, Google & Meta Ads, social media and branding for growing businesses. Free consultation and a fixed quote."
+  description="Website and app development, SEO & AEO, Google & Meta Ads, social media and branding for growing businesses. Free consultation and a fixed quote."
 >
   <!-- Hero -->
   <section class="hero">
@@ -95,7 +95,7 @@ const years = new Date().getFullYear() - site.foundedYear;
       </div>
       <ul class="service-grid">
         {services.map((s) => (
-          <li class="service-card">
+          <li class:list={['service-card', { 'service-card--wide': s.wide }]}>
             <span class="service-card__icon"><Icon name={s.icon} /></span>
             <h3>{s.title}</h3>
             <p>{s.text}</p>
@@ -273,7 +273,7 @@ const years = new Date().getFullYear() - site.foundedYear;
       <h2>Ready to grow your business online?</h2>
       <p>Tell us what you need. We'll reply with honest advice and a fixed quote.</p>
       <div class="closing__actions">
-        <a class="btn btn--primary" href="#quote" data-service="Website Design & Development">Website Design</a>
+        <a class="btn btn--primary" href="#quote" data-service="Web Design & App Development">Web Design & App Development</a>
         <a class="btn btn--dark" href="#quote" data-service="Google / Meta Ads">Digital Marketing</a>
       </div>
     </div>

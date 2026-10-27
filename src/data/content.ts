@@ -2,11 +2,11 @@
 
 export type IconName =
   | 'code' | 'megaphone' | 'pen' | 'search' | 'cart' | 'chart' | 'phone' | 'share' | 'video'
-  | 'map' | 'wrench' | 'mail' | 'rocket' | 'target' | 'shield' | 'clock' | 'users' | 'spark';
+  | 'map' | 'wrench' | 'mail' | 'rocket' | 'target' | 'shield' | 'clock' | 'users' | 'spark' | 'heart';
 
 export const heroPoints = [
   'Fast, mobile-first websites',
-  'SEO, Google & Meta Ads',
+  'SEO, AEO, Google & Meta Ads',
   'Clear monthly reports',
 ];
 
@@ -18,7 +18,7 @@ export const mainServices = [
     text: 'We design and build fast, secure websites that look good on every phone and turn visitors into enquiries. You get a site you can update yourself, with hosting and support handled for you.',
     points: ['Custom design, no ready-made themes', 'Loads in under 2 seconds', 'Booking, payments and WhatsApp built in', 'Admin panel to update content'],
     cta: 'Plan My Website',
-    service: 'Website Design & Development',
+    service: 'Web Design & App Development',
     visual: 'browser',
   },
   {
@@ -26,7 +26,7 @@ export const mainServices = [
     eyebrow: 'Digital Marketing',
     title: 'Reach people who are already searching for you',
     text: 'Search engine optimisation, Google Ads and Meta Ads planned around one number: qualified leads. Every rupee is tracked, and you get a simple report each month.',
-    points: ['Local SEO & Google Business Profile', 'Google Search & Performance Max', 'Instagram & Facebook ads', 'Monthly report in plain language'],
+    points: ['Local SEO, AEO & Google Business Profile', 'Google Search & Performance Max', 'Instagram & Facebook ads', 'Monthly report in plain language'],
     cta: 'Get More Leads',
     service: 'Google / Meta Ads',
     visual: 'chart',
@@ -43,16 +43,17 @@ export const mainServices = [
   },
 ] as const;
 
-export const services: { icon: IconName; title: string; text: string }[] = [
+export const services: { icon: IconName; title: string; text: string; wide?: boolean }[] = [
   { icon: 'code', title: 'Custom Websites', text: 'Business, portfolio and landing pages built for speed and enquiries.' },
   { icon: 'cart', title: 'E-commerce Stores', text: 'Online shops with payments, inventory and order tracking.' },
   { icon: 'wrench', title: 'Web Apps & Portals', text: 'Booking systems, dashboards, CRMs and customer portals.' },
-  { icon: 'search', title: 'SEO', text: 'Rank on Google for the searches that bring you customers.' },
+  { icon: 'search', title: 'SEO & AEO', text: 'Rank on Google and show up in AI answers (ChatGPT, Google AI Overviews) for the searches that bring you customers.' },
   { icon: 'target', title: 'Google & Meta Ads', text: 'Paid campaigns tuned for leads, not just clicks.' },
   { icon: 'share', title: 'Social Media Management', text: 'Planned posts, reels and community replies every month.' },
   { icon: 'map', title: 'Local Business Listing', text: 'Google Business Profile set-up, reviews and map visibility.' },
   { icon: 'pen', title: 'Logo & Branding', text: 'Identity, colours and guidelines that make you stand out.' },
   { icon: 'video', title: 'Video & Reels', text: 'Short videos and motion graphics for ads and social.' },
+  { icon: 'heart', title: 'NGO Setup & Website', text: 'We provide a legal team for your NGO setup and the best possible website, so you can focus on your work while we take care of the rest.', wide: true },
 ];
 
 // DEMO numbers.
@@ -70,6 +71,7 @@ export const industries: { icon: IconName; name: string; text: string; work: str
   { icon: 'cart', name: 'Retail & E-commerce', text: 'Shops and D2C brands selling online.', work: ['Online stores with UPI and cards', 'Catalogue ads on Instagram and Google', 'Abandoned cart reminders'] },
   { icon: 'wrench', name: 'Manufacturing', text: 'Factories, exporters and B2B suppliers.', work: ['Product catalogue websites', 'B2B lead generation on Google', 'Export-ready multilingual pages'] },
   { icon: 'spark', name: 'Professional Services', text: 'Lawyers, CAs, consultants and agencies.', work: ['Trust-first websites with online booking', 'Content and blogs that answer client questions', 'Compliance-aware wording'] },
+  { icon: 'heart', name: 'NGO', text: 'We provide a legal team for your NGO setup and the best possible website, so you can focus on your work while we take care of the rest.', work: ['Legal team for NGO registration and setup', 'Donation-ready website with clear impact stories', 'Volunteer and contact forms'] },
   { icon: 'clock', name: 'Hospitality', text: 'Hotels, restaurants and cafés.', work: ['Direct booking websites', 'Menus, offers and Google Maps visibility', 'Reels and influencer campaigns'] },
   { icon: 'rocket', name: 'Startups', text: 'New brands launching their first product.', work: ['Brand identity from scratch', 'MVP websites and web apps', 'Launch campaigns'] },
 ];
