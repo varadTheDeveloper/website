@@ -1,4 +1,4 @@
-# Zentrova Digital: agency website
+# The GrowthStep: agency website
 
 Landing page for a website design and digital marketing agency. Built with [Astro](https://astro.build) and plain CSS. No photos: all pictures are drawn in HTML/CSS.
 
@@ -17,7 +17,7 @@ npm run check               # type check
 | What | File |
 |---|---|
 | Name, phone, WhatsApp, email, city, social links, `demoMode` | `src/config/site.ts` |
-| Services, numbers, clients, portfolio, testimonials, FAQ | `src/data/content.ts` |
+| Services, numbers, demo projects, FAQ | `src/data/content.ts` |
 | Chatbot topics, keywords and replies | `src/data/chatbot.ts` (answers reuse the FAQ) |
 | Colours and fonts | top of `src/styles/global.css` |
 | Logo | `src/components/Logo.astro` and `public/favicon.svg` |
@@ -25,8 +25,8 @@ npm run check               # type check
 ## Demo mode
 
 `demoMode: true` in `src/config/site.ts` shows a "Demo site" bar and blocks search engines
-(`noindex` + `robots.txt`). The clients, numbers and testimonials in `content.ts` are **made up**.
-Replace them with real ones, then set `demoMode: false`. Do not publish fake testimonials.
+(`noindex` + `robots.txt`). The numbers (years, websites, clients) in `content.ts` are **made up**.
+Replace them with real ones, then set `demoMode: false`.
 
 ## Enquiry form (email)
 

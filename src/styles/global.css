@@ -76,7 +76,9 @@ button { font: inherit; cursor: pointer; }
 /* ---------- Logo ---------- */
 .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--navy); }
 .logo__text { font-weight: 800; font-size: 21px; letter-spacing: -0.03em; line-height: 1; display: flex; align-items: baseline; gap: 5px; }
-.logo__sub { font-weight: 600; font-size: 13px; color: var(--orange); letter-spacing: 0.08em; text-transform: uppercase; }
+.logo__sub { font-weight: 600; font-size: 12px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.logo__accent { color: var(--orange); }
+.logo--light .logo__sub { color: #aab6d3; }
 .logo--light { color: var(--white); }
 
 /* ---------- Header ---------- */
@@ -186,15 +188,6 @@ button { font: inherit; cursor: pointer; }
 .quote-form__note { margin: 4px 0 0; font-size: 12px; color: var(--muted); text-align: center; }
 .quote-form button[disabled] { opacity: .7; cursor: wait; transform: none; }
 @media (max-width: 480px) { .quote-form { padding: 24px 18px; } .field-row { grid-template-columns: 1fr; gap: 0; } }
-
-/* ---------- Logos marquee ---------- */
-.logos { padding: 44px 0 40px; border-bottom: 1px solid var(--line); }
-.logos__title { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); text-align: center; margin-bottom: 26px; }
-.marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
-.marquee__track { display: flex; gap: 56px; width: max-content; animation: marquee 40s linear infinite; }
-.marquee:hover .marquee__track { animation-play-state: paused; }
-.marquee__track li { font-size: 22px; font-weight: 800; color: #a3abc0; letter-spacing: -0.02em; white-space: nowrap; }
-@keyframes marquee { to { transform: translateX(calc(-50% - 28px)); } }
 
 /* ---------- Value ---------- */
 .value__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: center; }
@@ -318,7 +311,6 @@ button { font: inherit; cursor: pointer; }
 .modal__body { padding: 32px; }
 .modal__body h3 { font-size: 26px; }
 .modal__close { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 40px; height: 40px; border: 0; border-radius: 50%; background: var(--white); color: var(--ink); box-shadow: var(--shadow); }
-.modal__demo { font-size: 13px; color: #6b5300; background: #fff7d6; padding: 6px 10px; border-radius: 8px; display: inline-block; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
 .tags li { font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 999px; background: var(--soft); border: 1px solid var(--line); }
 .modal .checklist { margin-top: 12px; }
@@ -364,17 +356,6 @@ body.has-modal { overflow: hidden; }
 .tools__group li { font-size: 14px; font-weight: 600; color: var(--ink); padding: 6px 12px; border-radius: 8px; background: var(--soft); }
 @media (max-width: 960px) { .tools { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .tools { grid-template-columns: 1fr; } }
-
-/* ---------- Testimonials ---------- */
-.testimonials { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.testimonial { position: relative; padding: 32px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--white); display: flex; flex-direction: column; }
-.testimonial__q { color: var(--orange); opacity: .9; margin-bottom: 14px; }
-.testimonial blockquote { margin: 0 0 24px; font-size: 17px; color: var(--ink); flex: 1; }
-.testimonial__who { display: flex; align-items: center; gap: 12px; margin: 0; }
-.testimonial__who strong { display: block; color: var(--ink); }
-.testimonial__who small { display: block; color: var(--muted); font-size: 14px; }
-.avatar { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--navy); color: var(--white); font-weight: 700; font-size: 15px; flex: none; }
-@media (max-width: 760px) { .testimonials { grid-template-columns: 1fr; } }
 
 /* ---------- FAQ ---------- */
 .faq { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 64px; align-items: start; }
