@@ -48,7 +48,7 @@ const jsonLd = {
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    {site.demoMode && (
+    {site.demoMode && site.showDemoBar && (
       <div class="demo-bar" role="note">Demo site: numbers on this page are sample data.</div>
     )}
     <Header />

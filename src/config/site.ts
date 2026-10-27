@@ -25,4 +25,6 @@ export const site = {
   // true = demo data on the page: shows the "Demo site" bar and tells search engines not to index.
   // Set to false ONLY after the numbers in src/data/content.ts are real.
   demoMode: true,
+  // Shows the yellow "Demo site" bar at the top. Turned off at the owner's request.
+  showDemoBar: false,
 } as const;
