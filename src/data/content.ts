@@ -56,13 +56,8 @@ export const services: { icon: IconName; title: string; text: string; wide?: boo
   { icon: 'heart', title: 'NGO Setup & Website', text: 'We provide a legal team for your NGO setup and the best possible website, so you can focus on your work while we take care of the rest.', wide: true },
 ];
 
-// DEMO numbers.
-export const stats = [
-  { value: 7, suffix: '+', label: 'Years of experience' },
-  { value: 250, suffix: '+', label: 'Websites delivered' },
-  { value: 180, suffix: '+', label: 'Happy clients' },
-  { value: 12, suffix: '+', label: 'Industries served' },
-];
+// Combined experience of the team (the company itself was registered in October 2026).
+export const teamExperience = { value: '7–10 years', label: 'team experience in software development' };
 
 export const industries: { icon: IconName; name: string; text: string; work: string[] }[] = [
   { icon: 'shield', name: 'Healthcare', text: 'Clinics, hospitals and diagnostic labs.', work: ['Appointment booking websites', 'Local SEO for "near me" searches', 'Patient-friendly content in simple language'] },

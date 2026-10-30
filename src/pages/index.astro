@@ -5,10 +5,8 @@ import Visual from '../components/Visual.astro';
 import Icon from '../components/Icon.astro';
 import { site } from '../config/site';
 import {
-  heroPoints, mainServices, services, stats, industries, portfolio, process, tools, faqs,
+  heroPoints, mainServices, services, teamExperience, industries, portfolio, process, tools, faqs,
 } from '../data/content';
-
-const years = new Date().getFullYear() - site.foundedYear;
 ---
 <Base
   title={`${site.name} | Website Design & Digital Marketing Agency in ${site.city}`}
@@ -34,9 +32,7 @@ const years = new Date().getFullYear() - site.foundedYear;
           <a class="btn btn--ghost-light" href="#work">See Our Demos</a>
         </div>
         <dl class="hero__mini-stats">
-          <div><dt>{years}+</dt><dd>years</dd></div>
-          <div><dt>{stats[1].value}+</dt><dd>websites</dd></div>
-          <div><dt>{stats[2].value}+</dt><dd>clients</dd></div>
+          <div><dt>{teamExperience.value}</dt><dd>{teamExperience.label}</dd></div>
         </dl>
       </div>
       <div class="hero__form" id="quote">
@@ -103,18 +99,6 @@ const years = new Date().getFullYear() - site.foundedYear;
         ))}
       </ul>
       <div class="center"><a class="btn btn--primary" href="#quote">Enquire Now</a></div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="stats" aria-label="Our numbers">
-    <div class="container stats__grid">
-      {stats.map((s) => (
-        <div class="stat">
-          <p class="stat__value"><span data-count={s.value}>{s.value}</span>{s.suffix}</p>
-          <p class="stat__label">{s.label}</p>
-        </div>
-      ))}
     </div>
   </section>
 
