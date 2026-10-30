@@ -13,7 +13,7 @@ export const site = {
   city: 'Pune',
   address: 'Pune, Maharashtra, India',
   hours: 'Mon–Sat, 10:00–19:00',
-  foundedYear: 2019,
+  foundedYear: 2026,
 
   social: {
     instagram: '#',
